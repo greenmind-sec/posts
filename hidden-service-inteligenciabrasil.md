@@ -1,7 +1,10 @@
 ## Introdução
 
 ## A importancia da privacidade
-> Falar sobre a importancia da privacidade sobre projetos de jornalismo, comunidades e a livre expressão.
+A privacidade é muito importante para a nossa segurança na internet, seja em uma navegação segura ou a necessidade que algumas pessoas precisam. Jornalistas por exemplo, eles precisam de uma segurança maior para uma conexão segura entre troca de informações ou até mesmo falar com algum contato. Profissionais de segurança da informação ou especialistas em inteligencia para não ser reconhecido e assim mantendo uma OpsSec de suas operações. E é claro o usuario normal que não quer que seus passos sejam vigiados pelas grandes corporações privadas e governamentais.
+
+Atualmente temos uma maior vigilancia por parte dos governos, mas graças a comunidade temos mais acessibilidade a novas tecnologias seguras, por exemplo o Stop Prism que chegou para auxiliar na contra vigilancia imposta pela NSA nos Estados Unidos. Para cada solução proprietaria o Stop Prism mostra uma opensource e recomendada pela comunidade.
+https://prism-break.org/pt/
 
 ## Primeiros passos com Hidden Service TOR
 Durante a criação desses laboratorios vamos uma tecnologia chamada Docker para a criação dos servidores.
@@ -139,16 +142,44 @@ ls -la
 Vamos ver que temos 2 arquivos, o principal é o **hostname**.
 
 - **hostname** é o nome do nosso arquivo que vai ter o domínio TOR criado que esta disponível na deepweb.
+> Exemplo de .onion criado: http://rkfi2yg3skhqmdjervvf5mbh4qjslitceor4juc6ssuw4n2tmnpdwuyd.onion
 
 Agora é só acessar com o Tor Browser.
 
 > Já vamos ter nosso endereço na rede onion, o dominio é **.onion**. Mas lembra que estamos redirecionando a porta 80 ? Vamos instalar o Apache2 só para termos um servidor funcionando na porta 80.
 ```sh
-apt install apache2
+apt install nginx
 ```
 Não podemos esquecer de subir o serviço:
 ```sh
-service apache2 start
+service nginx start
 ```
 
+
+## Acessando seu site .onion
+> Temos diversas formas de acessar um site na rede onion, aqui vou explicar 3.
+
+### Onion.ws
+O projeto **onion.ws** é um gateway ou proxy darknet, para usar ele só precisamos substituir **.onion** por **.onion.ws** na barra de url do seu navegador. Ele nos auxilia no redirecionamento de sites da darknet sem a necessidade de baixar ou configurar qualquer novo software, como Tor e I2P.
+
+> Link do projeto: https://onion.ws
+
+Para acessar o site vamos inserir o **ws** no final.
+> http://rkfi2yg3skhqmdjervvf5mbh4qjslitceor4juc6ssuw4n2tmnpdwuyd.onion.ws/
+
+### Tor Browser
+O **Tor Browser** é um navegador preparado por uma ampla comunidade que nos auxilia na privacidade e na conexão com a rede onion. Com ele podemos nos conectar em diversos dispositivos e sistemas operacionais.
+
+Por exemplo:
+- Linux
+- Windows
+- Android
+
+> Veja o site oficial: https://www.torproject.org/download/
+
 ## Conclusão
+Como vimos esse tipo de configuração pode ajudar estudantes a inserir projetos online de forma facil, profissionais de segurança tambem são beneficiados com a segurança a anonimato da rede e profissionais que precisam de privacidade em sua conexão.
+
+Alem da rede TOR o projeto Stop Prism pode te dar uma lista de softwares que podem ser usados na privacidade e contra inteligencia https://prism-break.org/pt/.
+
+Use esse conhecimento com responsabilidade, nunca deixa de compartilhar conhecimento com a comunidade e ter paciencia com quem está começando.
